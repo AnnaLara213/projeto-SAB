@@ -1,0 +1,165 @@
+/* Reset de estilos padrão */
+body {
+    display: flex;
+    flex-direction: column; /* Layout vertical */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    background-color: #ffffff; /* Cor de fundo padrão */
+    background-image: url('https://wallpaperset.com/w/full/b/f/a/455899.jpg'); /* Imagem de fundo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o cabeçalho */
+.header {
+    width: 100%; /* O cabeçalho ocupa toda a largura */
+    display: flex; /* Flexbox para centralização */
+    justify-content: center; /* Alinhamento horizontal ao centro */
+    align-items: center; /* Alinhamento vertical ao centro */
+    padding: 20px; /* Espaçamento no cabeçalho */
+    background-color: #007bff59; /* Fundo azul com leve transparência */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* Linha inferior branca */
+}
+
+.title {
+    font-size: 35px; /* Tamanho da fonte do título */
+    color: rgb(255, 255, 255, 0.8); /* Cor branca do título */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Alinhamento centralizado */
+}
+
+/* Estilos para a barra de navegação */
+.nav-bar {
+    display: flex; /* Barra de navegação em flexbox */
+    justify-content: center; /* Centraliza os itens da barra de navegação */
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove espaçamento interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
+    border-bottom: 2px solid #007bff; /* Linha inferior azul */
+    margin-top: 10px; /* Margem superior */
+}
+
+.nav-bar li {
+    margin: 0 15px; /* Espaçamento horizontal entre os itens da navegação */
+}
+
+.nav-bar a {
+    color: #007bff; /* Cor do texto da navegação */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px 20px; /* Espaçamento interno dos itens */
+    display: block; /* Torna o link clicável em toda a área */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.nav-bar a:hover {
+    background-color: #007bff; /* Fundo azul ao passar o mouse */
+    color: white; /* Texto branco ao passar o mouse */
+}
+
+/* Estilos para a seção das tabelas */
+.tables-section {
+    display: flex; /* Usar flexbox para layout em linha */
+    justify-content: space-around; /* Espaço uniforme entre as tabelas */
+    margin-top: 30px; /* Margem superior */
+}
+
+.container {
+    text-align: center; /* Centraliza o texto */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 80%; /* Retorna ao tamanho original de 80% da largura */
+    max-width: 350px; /* Largura máxima de 350px */
+    margin: 20px auto; /* Centraliza horizontalmente */
+}
+
+h1 {
+    color: #2B70C2; /* Cor azul dos títulos */
+}
+
+
+/* Estilizando os links como botões */
+.btn-login {
+    display: inline-block; /* Exibição em linha para permitir padding */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #2B70C2; /* Fundo azul */
+    color: #FFFFFF; /* Texto branco */
+    font-size: 16px; /* Tamanho da fonte */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+.btn-login:hover {
+    background-color: #1a4a75; /* Fundo mais escuro ao passar o mouse */
+}
+
+/* Estilos para a seção do Dashboard */
+.dashboard-section {
+    margin: 40px auto; /* Margem superior de 40px e centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo azul claro */
+    text-align: center; /* Centraliza o texto */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 87%; /* Largura do contêiner (ajuste conforme necessário) */
+   
+}
+
+/* Título da seção */
+.dashboard-section h1 {
+    color: #2B70C2; /* Cor azul do título do Dashboard */
+}
+
+/* Parágrafo da seção */
+.dashboard-section p {
+    color: #333; /* Cor padrão para o parágrafo do Dashboard */
+}
+
+/* Botão para o Dashboard */
+.dashboard-section .btn-action {
+    display: inline-block; /* Exibição em linha para permitir padding */
+    margin: 10px 20px; /* Margem para o botão */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #28a745; /* Fundo verde */
+    color: white; /* Texto branco */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+/* Efeito hover no botão */
+.dashboard-section .btn-action:hover {
+    background-color: #218838; /* Fundo verde mais escuro ao passar o mouse */
+}
+
+/* Estilos gerais para o corpo */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    background-color: #f4f4f4; /* Cor de fundo padrão */
+}
+
+/* Media queries para garantir responsividade em telas menores */
+@media screen and (max-width: 500px) {
+    .tables-section {
+        flex-direction: column; /* Empilha as tabelas em vez de colocá-las lado a lado */
+        align-items: center; /* Centraliza as tabelas verticalmente */
+    }
+
+    .container {
+        width: 90%; /* Aumenta a largura das tabelas em telas menores */
+        max-width: 100%; /* Remove a restrição de largura máxima */
+    }
+}
+/* Rodapé */
+.rodape {
+    background-color: #2B70C2;
+    color: #ffff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto; /* Esta linha garante que o rodapé fique no final da página */
+}

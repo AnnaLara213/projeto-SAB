@@ -1,0 +1,213 @@
+/* Estilos gerais */
+body {
+    display: flex;
+    height: 100vh; /* Altura total da viewport */
+    margin: 0; /* Remove a margem padrão */
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+}
+
+/* Barra lateral azul */
+.sidebar {
+    width: 40%; /* Largura da barra lateral */
+    background-color: #2B70C2; /* Cor de fundo da barra lateral */
+    color: #D4B0B5; /* Cor do texto */
+    display: flex;
+    flex-direction: column; /* Disposição dos elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    position: relative; /* Necessário para posicionamento absoluto dos filhos */
+}
+
+/* Logo pequena e sigla */
+.logo-small-link {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: inherit; /* Mantém a cor do texto herdada */
+}
+.sidebar .logo-small {
+    display: flex; /* Utiliza flexbox */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+    position: absolute; /* Posiciona absolutamente */
+    top: 20px; /* Espaçamento do topo */
+    right: 20px; /* Espaçamento da direita */
+}
+
+.sidebar .logo-small img {
+    width: 80px; /* Largura da logo pequena */
+    height: auto; /* Altura automática para manter a proporção */
+    margin-right: 5px; /* Espaçamento à direita da logo */
+}
+
+.sidebar h1 {
+    margin: 0; /* Remove a margem */
+    font-size: 25px; /* Tamanho da fonte */
+    color: #D4B0B5; /* Cor do texto */
+}
+
+/* Títulos e subtítulos */
+.sidebar h2 {
+    margin: 10px 0 5px 0; /* Margem superior e inferior */
+    font-size: 22px; /* Tamanho da fonte */
+}
+
+.sidebar h3 {
+    margin: 5px 0 20px 0; /* Margem superior e inferior */
+    font-size: 18px; /* Tamanho da fonte */
+}
+
+/* Formulário de login */
+.sidebar form {
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Disposição dos elementos em coluna */
+    width: 100%; /* Largura total */
+    max-width: 300px; /* Largura máxima */
+}
+
+.sidebar form input[type="text"],
+.sidebar form input[type="password"] {
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    border: none; /* Remove a borda */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Botões de formulário */
+.sidebar form button {
+    padding: 5px 10px; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #ffffff; /* Cor de fundo */
+    color: #2B70C2; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    margin-bottom: 5px; /* Espaçamento inferior */
+}
+
+.sidebar form button:hover {
+    background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+    color: #1C1C39; /* Cor do texto ao passar o mouse */
+}
+
+/* Área da logo e frase */
+.main-content {
+    width: 60%; /* Largura da área principal */
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Disposição dos elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+.main-content .logo img {
+    max-width: 200px; /* Largura máxima da logo */
+    height: auto; /* Altura automática para manter a proporção */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.main-content .phrase {
+    font-size: 24px; /* Tamanho da fonte */
+    color: #2B70C2; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    max-width: 400px; /* Largura máxima da frase */
+}
+
+/* Personalização adicional */
+.sidebar {
+    background-color: var(--sidebar-bg, #2b70c2); /* Cor de fundo com variável */
+    color: var(--sidebar-text, #ffffff); /* Cor do texto com variável */
+}
+
+.sidebar h1, .sidebar h2, .sidebar h3 {
+    color: var(--sidebar-heading, #ffffff); /* Cor dos títulos com variável */
+}
+
+.sidebar form input[type="text"],
+.sidebar form input[type="password"] {
+    background-color: var(--input-bg, #ffffff); /* Cor de fundo dos inputs */
+    color: var(--input-text, #000000); /* Cor do texto dos inputs */
+    margin-bottom: var(--input-margin-bottom, 15px); /* Espaçamento inferior dos inputs */
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px; /* Espaçamento entre os botões */
+}
+
+/* Botões na sidebar */
+.sidebar-btn {
+    width: 100%; /* Faz o botão ocupar a largura completa da sidebar */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Botão primário */
+.primary-sidebar-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.primary-sidebar-btn:hover {
+    background-color: var(--button-bg, #1C1C39); /* Cor de fundo dos botões */
+    color: var(--button-text, #ffffff); /* Cor do texto dos botões */
+    margin-bottom: var(--button-margin-bottom, 10px); /* Espaçamento inferior dos botões */
+}
+
+/* Botão secundário */
+.secondary-sidebar-btn {
+    background-color: var(--button-bg, #ffffff); /* Cor de fundo dos botões */
+    color: var(--button-text, #1C1C39); /* Cor do texto dos botões */
+    margin-bottom: var(--button-margin-bottom, 10px); /* Espaçamento inferior dos botões */
+}
+
+.sidebar form button {
+    background-color: var(--button-bg, #1C1C39); /* Cor de fundo dos botões */
+    color: var(--button-text, #ffffff); /* Cor do texto dos botões */
+    margin-bottom: var(--button-margin-bottom, 10px); /* Espaçamento inferior dos botões */
+}
+
+.sidebar form button {
+    background-color: var(--button-bg, #1C1C39); /* Cor de fundo dos botões */
+    color: var(--button-text, #ffffff); /* Cor do texto dos botões */
+    margin-bottom: var(--button-margin-bottom, 10px); /* Espaçamento inferior dos botões */
+}
+.sidebar p {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px; /* Margem superior */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+.sidebar .sidebar-bottom-link {
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 20px; /* Espaçamento do rodapé */
+    width: 100%; /* Largura total */
+    text-align: center; /* Centraliza o texto */
+}
+
+.sidebar .sidebar-bottom-link a {
+    color: #ffffff; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.sidebar .sidebar-bottom-link a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+.main-content .phrase {
+    color: var(--phrase-color, #2B70C2); /* Cor do texto da frase com variável */
+}
+
+* Estilos do rodapé */
+.footer {
+    background-color: #2B70C2; /* Cor de fundo azul */
+    color: #FFFFFF; /* Cor do texto branco */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Espaçamento interno superior e inferior */
+    position: absolute; /* Posiciona o rodapé */
+    width: 100%; /* Largura total do rodapé */
+    bottom: 0; /* Fixa o rodapé na parte inferior da página */
+}

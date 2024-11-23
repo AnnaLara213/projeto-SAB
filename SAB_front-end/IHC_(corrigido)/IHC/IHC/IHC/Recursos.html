@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>ArrumaBrasil</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recursos.css">
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://i.pinimg.com/originals/9f/32/6d/9f326dc3daaba1d4fa20ac141d0c0370.png" alt="ArrumaBrasil"
+                style="width: 150px; height: auto;">
+        </div>
+        <!-- Navegação -->
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Alerta</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="Recursos.html" class="active">Recursos</a></li>
+
+            </ul>
+        </nav>
+        <!-- Suporte -->
+        <div class="support">
+            <a href="#">Help & Support</a>
+            <a> </a>
+            <h1>
+            </h1>
+        </div>
+    </div>
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <!-- Cabeçalho -->
+        <header>
+            <h2 class="title">Recursos</h2>
+            <div class="user-info">
+                <img src="https://i.pinimg.com/originals/74/3e/b1/743eb130633e7fe01103f488431e1581.png"
+                    class="imagem-redimensionada" alt="User">
+                <a href="login.html" class="login-link">User</a>
+            </div>
+        </header>
+        <a> </a>
+        <h1>
+        </h1>
+        <section class="resources">
+            <!-- Adicionar Recursos -->
+            <div class="alert-creation">
+                <h3>Recursos Recebidos</h3>
+                <div class="alert-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Estoque</th>
+                                <th>Selecionar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <a> </a>
+            <h1></h1>
+
+            <!-- Formulário de Doação -->
+            <div class="alert-creation">
+                <h3>Doar Recursos</h3>
+                <form id="doacaoForm">
+                    <label for="datadoacao">Data da Doação:</label>
+                    <input type="datetime-local" id="datadoacao" name="datadoacao" required>
+
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" name="quantidade" min="1" required>
+
+                    <label for="recursoDoacao">Recurso:</label>
+                    <select id="recursoDoacao" name="recurso" required>
+                        <option value="">Selecione um recurso</option>
+                    </select>
+
+                    <label for="unidadeDoacao">Unidade:</label>
+                    <select id="unidadeDoacao" name="unidade" required>
+                        <option value="">Selecione uma unidade</option>
+                    </select>
+
+                    <label for="responsavelDoacao">Responsável:</label>
+                    <select id="responsavelDoacao" name="responsavel" required>
+                        <option value="">Selecione um responsável</option>
+                    </select>
+
+                    <button type="submit">Registrar Doação</button>
+                </form>
+            </div>
+
+            <!-- Formulário de Empréstimo -->
+            <div class="alert-creation">
+                <h3>Emprestar Recursos</h3>
+                <form id="emprestimoForm">
+                    <label for="dataemprestimo">Data do Empréstimo:</label>
+                    <input type="datetime-local" id="dataemprestimo" name="dataemprestimo" required>
+
+                    <label for="quantidadeEmprestimo">Quantidade:</label>
+                    <input type="number" id="quantidadeEmprestimo" name="quantidade" min="1" required>
+
+                    <label for="recursoEmprestimo">Recurso:</label>
+                    <select id="recursoEmprestimo" name="recurso" required>
+                        <option value="">Selecione um recurso</option>
+                    </select>
+
+                    <label for="unidadeEmprestimo">Unidade:</label>
+                    <select id="unidadeEmprestimo" name="unidade" required>
+                        <option value="">Selecione uma unidade</option>
+                    </select>
+
+                    <label for="responsavelEmprestimo">Responsável:</label>
+                    <select id="responsavelEmprestimo" name="responsavel" required>
+                        <option value="">Selecione um responsável</option>
+                    </select>
+
+                    <button type="submit">Registrar Empréstimo</button>
+                </form>
+            </div>
+
+        </section>
+        <!-- Alertas direcionados em sua unidade -->
+        <section class="unit-alerts">
+            <h3>Últimos itens doados</h3>
+            <div class="alert-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Estoque</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Luvas</td>
+                            <td>64 Unidades</td>
+                        </tr>
+                        <tr>
+                            <td>Soro</td>
+                            <td>560 Unidades</td>
+                        </tr>
+                        <tr>
+                            <td>Anestesia</td>
+                            <td>242 Unidades</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+    </div>
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <p>&copy; 2024 ArrumaBrasil. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const tabelaRecursos = document.querySelector('.resources .alert-table tbody');
+
+            // Lista de nomes de recursos padrão
+            const recursosPadrao = [
+                "Luvas descartáveis",
+                "Máscaras cirúrgicas",
+                "Seringas",
+                "Termômetros digitais",
+                "Agulhas",
+                "Soro fisiológico",
+                "Desinfetante hospitalar",
+                "Ataduras",
+                "Compressas de gaze",
+                "Medicamentos genéricos",
+                "Aventais descartáveis",
+                "Lençóis hospitalares",
+                "Cânulas",
+                "Cateteres",
+                "Oxímetros de pulso",
+                "Torniquetes",
+                "Fitas microporosas",
+                "Tesouras cirúrgicas",
+                "Pinças hemostáticas",
+                "Esterilizadores portáteis"
+            ];
+
+            try {
+                const response = await fetch('http://localhost:5000/estoques');
+
+                if (!response.ok) {
+                    throw new Error("Erro ao buscar estoques");
+                }
+
+                const estoques = await response.json();
+
+                tabelaRecursos.innerHTML = estoques.map((estoque, index) => `
+                    <tr>
+                        <td>${estoque.nome || recursosPadrao[index % recursosPadrao.length]}</td>
+                        <td>${estoque.quantidade} Unidades</td>
+                        <td><input type="checkbox" name="item${estoque.id}"></td>
+                    </tr>
+                `).join('');
+            } catch (error) {
+                console.error("Erro ao carregar os estoques:", error);
+                tabelaRecursos.innerHTML = `<tr><td colspan="3">Erro ao carregar dados</td></tr>`;
+            }
+        });
+
+    </script>
+    <script>
+        // Carregar recursos, unidades e responsáveis
+        async function loadOptionsForDoacao() {
+            try {
+                // Fazendo as requisições para obter recursos, unidades e profissionais
+                const [recursosResponse, unidadesResponse, profissionaisResponse] = await Promise.all([
+                    fetch('http://localhost:5000/recursos'),       // Obtém recursos
+                    fetch('http://localhost:5000/unidades'),      // Obtém unidades
+                    fetch('http://localhost:5000/profissionais')  // Obtém profissionais (responsáveis)
+                ]);
+
+                // Convertendo as respostas em JSON
+                const recursos = await recursosResponse.json();
+                const unidades = await unidadesResponse.json();
+                const profissionais = await profissionaisResponse.json();
+
+                // Seletores dos campos no formulário de doação
+                const recursoSelect = document.getElementById('recursoDoacao'); // ID atualizado
+                const unidadeSelect = document.getElementById('unidadeDoacao'); // ID atualizado
+                const responsavelSelect = document.getElementById('responsavelDoacao'); // ID atualizado
+
+                // Preenche a lista de recursos
+                recursos.forEach(recurso => {
+                    const option = document.createElement('option');
+                    option.value = recurso.idrecurso;  // idrecurso correto
+                    option.textContent = recurso.nome;
+                    recursoSelect.appendChild(option);
+                });
+
+                // Preenche a lista de unidades
+                unidades.forEach(unidade => {
+                    const option = document.createElement('option');
+                    option.value = unidade.idunidade;  // idunidade correto
+                    option.textContent = unidade.nome;
+                    unidadeSelect.appendChild(option);
+                });
+
+                // Preenche a lista de responsáveis (profissionais)
+                profissionais.forEach(profissional => {
+                    const option = document.createElement('option');
+                    option.value = profissional.idprofissional;  // idprofissional correto
+                    option.textContent = profissional.nome;
+                    responsavelSelect.appendChild(option);
+                });
+
+            } catch (error) {
+                console.error('Erro ao carregar dados para doação:', error);
+            }
+        }
+
+        // Enviar a doação
+        async function handleSubmitDoacao(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+
+            let dataDoacao = formData.get('datadoacao');
+
+            // Garantir que a data tenha o formato correto (incluindo os segundos)
+            if (dataDoacao && !dataDoacao.includes(':00')) {
+                dataDoacao += ':00'; // Adiciona os segundos ao final da data
+            }
+
+            const data = {
+                datadoacao: dataDoacao,
+                quantidade: formData.get('quantidade'),
+                recurso: formData.get('recurso'),
+                unidade: formData.get('unidade'),
+                responsavel: formData.get('responsavel') // Responsável preenchido corretamente
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/doacao', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Doação realizada com sucesso!');
+                } else {
+                    const error = await response.json();
+                    alert(`Erro ao realizar doação: ${error.message || error.error}`);
+                }
+
+            } catch (error) {
+                console.error('Erro ao enviar doação:', error);
+                alert('Ocorreu um erro ao realizar a doação.');
+            }
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOptionsForDoacao();  // Carrega as opções no formulário
+            document.getElementById('doacaoForm').addEventListener('submit', handleSubmitDoacao);  // Submete o formulário
+        });
+
+
+    </script>
+    <script>
+        // Função para carregar as opções do formulário de empréstimos
+        async function loadOptionsForEmprestimos() {
+            try {
+                // Fazendo as requisições para obter recursos, unidades e profissionais
+                const [recursosResponse, unidadesResponse, profissionaisResponse] = await Promise.all([
+                    fetch('http://localhost:5000/recursos'),       // Obtém recursos
+                    fetch('http://localhost:5000/unidades'),      // Obtém unidades
+                    fetch('http://localhost:5000/profissionais')  // Obtém profissionais (responsáveis)
+                ]);
+
+                // Convertendo as respostas em JSON
+                const recursos = await recursosResponse.json();
+                const unidades = await unidadesResponse.json();
+                const profissionais = await profissionaisResponse.json();
+
+                // Seletores dos campos no formulário de empréstimos
+                const recursoSelect = document.getElementById('recursoEmprestimo'); // ID atualizado
+                const unidadeSelect = document.getElementById('unidadeEmprestimo'); // ID atualizado
+                const responsavelSelect = document.getElementById('responsavelEmprestimo'); // ID atualizado
+
+                // Preenche a lista de recursos
+                recursos.forEach(recurso => {
+                    const option = document.createElement('option');
+                    option.value = recurso.idrecurso; // idrecurso correto
+                    option.textContent = recurso.nome;
+                    recursoSelect.appendChild(option);
+                });
+
+                // Preenche a lista de unidades
+                unidades.forEach(unidade => {
+                    const option = document.createElement('option');
+                    option.value = unidade.idunidade; // idunidade correto
+                    option.textContent = unidade.nome;
+                    unidadeSelect.appendChild(option);
+                });
+
+                // Preenche a lista de responsáveis (profissionais)
+                profissionais.forEach(profissional => {
+                    const option = document.createElement('option');
+                    option.value = profissional.idprofissional; // idprofissional correto
+                    option.textContent = profissional.nome;
+                    responsavelSelect.appendChild(option);
+                });
+
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+                alert('Erro ao carregar opções para o formulário de empréstimos.');
+            }
+        }
+
+        // Função para enviar um empréstimo
+        async function handleEmprestimoSubmit(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+
+            let dataEmprestimo = formData.get('dataemprestimo');
+
+            // Garantir que a data tenha o formato correto (incluindo os segundos)
+            if (dataEmprestimo && !dataEmprestimo.includes(':00')) {
+                dataEmprestimo += ':00'; // Adiciona os segundos ao final da data
+            }
+
+            const data = {
+                dataemprestimo: dataEmprestimo,
+                quantidade: formData.get('quantidade'),
+                recurso: formData.get('recurso'),
+                unidade: formData.get('unidade'),
+                responsavel: formData.get('responsavel') // Responsável preenchido corretamente
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/emprestimo', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Empréstimo realizado com sucesso!');
+                } else {
+                    const error = await response.json();
+                    alert(`Erro ao realizar empréstimo: ${error.message || error.error}`);
+                }
+
+            } catch (error) {
+                console.error('Erro ao enviar empréstimo:', error);
+                alert('Ocorreu um erro ao realizar o empréstimo.');
+            }
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOptionsForEmprestimos();  // Carrega as opções no formulário
+            document.getElementById('emprestimoForm').addEventListener('submit', handleEmprestimoSubmit);  // Submete o formulário
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Login - ArrumaBrasil</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <div class="logo-small">
+            <a href="home.html">
+                <img src="https://i.pinimg.com/originals/9f/32/6d/9f326dc3daaba1d4fa20ac141d0c0370.png"
+                    alt="Logo pequena">
+            </a>
+        </div>
+        <h2>Entrar</h2>
+        <h3>Vamos lá!</h3>
+        <form>
+            <input type="text" placeholder="Email" required>
+            <input type="password" placeholder="Senha" required>
+            <button href="home.html" class="btn sidebar-btn primary-sidebar-btn" id="loginBtn">Entrar</button>
+            <button type="button" class="btn sidebar-btn secondary-sidebar-btn">Solicitar acesso ao gestor</button>
+            <p>Esqueci a senha</p>
+        </form>
+        <p class="sidebar-bottom-link">
+            <a href="welcome.html">Voltar para a página de boas-vindas</a>
+        </p>
+    </div>
+
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <div class="logo">
+            <img src="https://i.pinimg.com/originals/9f/32/6d/9f326dc3daaba1d4fa20ac141d0c0370.png"
+                alt="Logo ArrumaBrasil">
+        </div>
+        <div class="phrase">
+            <p>Bem-vindo ao ArrumaBrasil!</p>
+            <p>Plataforma de gestão e otimização de recursos hospitalares em todo o Brasil.</p>
+        </div>
+    </div>
+    <!-- Rodapé -->
+    <div class="footer">
+        &copy; 2024 ArrumaBrasil. Todos os direitos reservados.
+    </div>
+    <style>
+        /* Estilos do rodapé */
+        .footer {
+            background-color: #2B70C2;
+            /* Cor de fundo azul */
+            color: #FFFFFF;
+            /* Cor do texto branco */
+            text-align: center;
+            /* Centraliza o texto */
+            padding: 10px 0;
+            /* Espaçamento interno superior e inferior */
+            width: 100%;
+            /* Largura total do rodapé */
+            position: fixed;
+            /* Posiciona o rodapé */
+            bottom: 0;
+            /* Fixa o rodapé na parte inferior da página */
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginBtn = document.getElementById('loginBtn');
+
+            // Verifique se o elemento existe
+            if (loginBtn) {
+                loginBtn.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const email = document.querySelector('input[type="text"]').value;
+                    const senha = document.querySelector('input[type="password"]').value;
+
+                    // Chama a função de login
+                    loginUser(email, senha);
+                });
+            }
+        });
+
+        function loginUser(email, senha) {
+            fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, senha })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.token) {
+                        localStorage.setItem('token', data.token);
+                        window.location.href = 'home.html';
+                    } else {
+                        alert('Erro de login: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro no login:', error);
+                    alert('Erro no servidor, tente novamente mais tarde.');
+                });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+/* Reset de estilos padrão */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+.title {
+    font-family: "Nome da Fonte", sans-serif; /* Altere "Nome da Fonte" para o nome da fonte desejada */
+    font-size: 35px; /* Tamanho da fonte */
+    color: #2B70C2; /* Cor do texto */
+    font-weight: bold; /* Peso da fonte */
+    text-align: center; /* Alinhamento do texto */
+    /* Outras propriedades de estilo conforme necessário */
+}
+/* Estilos da barra lateral */
+.sidebar {
+    width: 250px; /* Largura da barra lateral */
+    background-color: #ffffff; /* Cor de fundo da barra lateral */
+    color: #5c5c5c; /* Cor do texto na barra lateral */
+    position: fixed; /* Fixa a barra lateral na tela */
+    height: 100%; /* Altura da barra lateral */
+    padding-top: 20px; /* Espaçamento superior interno */
+}
+
+.sidebar .logo {
+    text-align: center; /* Centraliza a logo */
+}
+
+.sidebar .logo img {
+    width: 150px; /* Define a largura da imagem da logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilos do menu de navegação */
+.sidebar nav ul {
+    list-style: none; /* Remove marcadores de lista */
+    padding: 0; /* Remove o espaçamento interno */
+}
+
+.sidebar nav ul li {
+    padding: 15px 20px; /* Espaçamento interno dos itens do menu */
+}
+
+.sidebar nav ul li a {
+    color: #747474; /* Cor do texto dos links */
+    text-decoration: none; /* Remove sublinhado dos links */
+    display: block; /* Exibe como bloco */
+}
+
+/* Estilo para links ativos ou ao passar o mouse */
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+    background-color: #ffffff; /* Cor de fundo dos links ativos ou ao passar o mouse */
+    color: #2B70C2; /* Cor do texto dos links ativos ou ao passar o mouse */
+    font-size: 1.1em; /* Aumenta o tamanho do texto dos links ativos ou ao passar o mouse */
+}
+
+/* Estilos do link de suporte */
+.sidebar .support {
+    position: absolute; /* Posiciona de forma absoluta */
+    bottom: 20px; /* Posiciona 20px a partir do fundo */
+    width: 100%; /* Largura completa */
+    text-align: center; /* Centraliza o texto */
+}
+
+.sidebar .support a {
+    color: #757575; /* Cor do texto do link de suporte */
+    text-decoration: none; /* Remove sublinhado do link */
+}
+
+/* Estilos do conteúdo principal */
+.main-content {
+    margin-left: 250px; /* Espaçamento à esquerda para não sobrepor a barra lateral */
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilos do cabeçalho */
+header {
+    display: flex; /* Utiliza flexbox */
+    justify-content: flex-end; /* Alinha itens à direita */
+    justify-content: space-between; /* Alinha itens nas extremidades */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+    padding: 10px 0; /* Espaçamento superior e inferior */
+    background-color: #ffffff; /* Cor de fundo do cabeçalho */
+    margin-right: 0; /* Remove o espaçamento à direita */
+}
+
+header .user-info {
+    display: flex; /* Utiliza flexbox */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+}
+
+header .user-info img {
+    border-radius: 50%; /* Torna a imagem circular */
+    margin-right: 10px; /* Espaçamento à direita da imagem */
+}
+.Adicionar-recursos {
+    background-color: #e0e0e0; /* Cor de fundo da tabela */
+    padding: 20px; /* Espaçamento interno da tabela */
+    border-radius: 8px; /* Raio do arredondamento das bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra da tabela */
+}
+
+.barra-pesquisa {
+    display: flex; /* Utiliza flexbox para alinhar os elementos */
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: space-between;
+}
+
+.barra-pesquisa input[type="text"] {
+    padding: 10px; /* Espaçamento interno do campo de texto */
+    border: 1px solid #000000; /* Borda do campo de texto */
+    border-radius: 4px; /* Raio do arredondamento das bordas do campo de texto */
+    width: 200px; /* Largura do campo de texto */
+    margin-right: 10px; /* Espaçamento à direita do campo de texto */
+}
+
+.barra-pesquisa img {
+    width: 60px; /* Largura do ícone de filtro */
+    height: 40px; /* Altura do ícone de filtro */
+}
+
+
+
+/* Estilos da criação de alertas */
+.alert-creation {
+    margin-bottom: 20px; /* Espaçamento inferior */
+    display: flex; /* Utiliza flexbox para alinhar os itens */
+    flex-direction: column; /* Define a direção dos itens para uma coluna */
+    background-color: #e0e0e0; /* Cor de fundo da tabela */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center; /* Alinha os elementos ao centro horizontalmente */
+    
+}
+.alert-creation h3 {
+    color: #333; /* Cor do título da tabela */
+    text-align: center; /* Alinhamento centralizado do título */
+    margin-top: 0; /* Remover margem superior padrão */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+.alert-creation form {
+    display: flex; /* Utiliza flexbox para alinhar os campos */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: 10px; /* Espaçamento entre itens */
+    justify-content: space-between; /* Alinha itens nas extremidades */
+    align-items: center; 
+}
+
+
+.alert-creation form select,
+.alert-creation form button {
+    padding: 10px; /* Espaçamento interno dos campos e botão */
+    border: 1px solid #9b9b9b; /* Borda dos campos e botão */
+    border-radius: 4px; /* Bordas arredondadas dos campos e botão */
+    bottom: 0; /* Alinha o botão na parte inferior */
+    
+}
+.button-container {
+    align-self: flex-end; /* Alinha o conteúdo à direita */
+    margin-top: auto; /* Empurra o botão para a parte inferior da div */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+}
+.imagem-redimensionada {
+    max-width: 65px; /* Largura máxima da imagem */
+    height: auto; /* Mantém a proporção original */
+}
+/* Adiciona estilos para o link "Entrar" */
+.user-info .login-link {
+    color: #383838; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-left: 10px; /* Espaçamento à esquerda */
+}
+
+.user-info .login-link:hover {
+    text-decoration: none; /* Sublinhado ao passar o mouse */
+    background-color: #ffffff; /* Cor de fundo dos links ativos ou ao passar o mouse */
+    color: #2B70C2; /* Cor do texto dos links ativos ou ao passar o mouse */
+    font-size: 1.1em; /* Aumenta o tamanho do texto dos links ativos ou ao passar o mouse */
+}
+.alert-table table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Remove espaçamento entre as bordas das células */
+}
+
+.alert-table th, .alert-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Linha separadora entre as linhas */
+}
+
+.alert-table th {
+    background-color: #007bff; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto do cabeçalho */
+}
+
+.alert-table tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+}
+/* Rodapé */
+.rodape {
+    background-color: #2B70C2;
+    color: #ffff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto; /* Esta linha garante que o rodapé fique no final da página */
+}

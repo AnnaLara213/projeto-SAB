@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS global -->
+    <link rel="stylesheet" href="dashboard.css"> <!-- CSS específico da dashboard -->
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://i.pinimg.com/originals/9f/32/6d/9f326dc3daaba1d4fa20ac141d0c0370.png" alt="ArrumaBrasil" style="width: 150px; height: auto;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Alerta</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="Recursos.html">Recursos</a></li>
+                
+            </ul>
+        </nav>
+        <!-- Suporte -->
+        <div class="support">
+            <a href="#">Help & Support</a>
+            <a> </a><h1>
+            </h1>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2 class="title">Dashboard</h2> 
+            <div class="user-info">
+                <img src="https://i.pinimg.com/originals/74/3e/b1/743eb130633e7fe01103f488431e1581.png" class="imagem-redimensionada" alt="User">
+                <a href="login.html" class="login-link">User</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="grafico-pizza">
+                <h2>Total de profissionais em sua unidade</h2>
+                <canvas id="graficoPizza"></canvas>
+                <form id="formPizza">
+                   
+                </form>
+            </section>
+
+
+            <section class="tabela1">
+                <h2>Médicos, Técnicos, Enfermeiros</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cargo</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Médicos</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Técnicos</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>Enfermeiros</td>
+                            <td>28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="tabela2">
+                <h2>Orçamento</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Computadores</td>
+                            <td>R$ 6.500,00</td>
+                        </tr>
+                        <tr>
+                            <td>Equipamentos médicos</td>
+                            <td>R$ 10.580,00</td>
+                        </tr>
+                        <tr>
+                            <td>Ferramentas</td>
+                            <td>R$ 3.800,00</td>
+                        </tr>
+                        <tr>
+                            <td>Uniformes</td>
+                            <td>R$ 1.200,00</td>
+                        </tr>
+                        <tr>
+                            <td>Remédios</td>
+                            <td>R$ 5.500,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="grafico-barras">
+                <h2>Orçamemento</h2>
+                <canvas id="graficoBarras"></canvas>
+                <form id="formBarras">
+                    
+                </form>
+            </section>
+
+        </main>
+    </div>
+ <!-- Rodapé -->
+ <footer class="rodape">
+    <p>&copy; 2024 ArrumaBrasil. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Gráfico de Pizza
+        var ctxPizza = document.getElementById('graficoPizza').getContext('2d');
+        var graficoPizza = new Chart(ctxPizza, {
+            type: 'pie',
+            data: {
+                labels: ['Médicos', 'Técnicos', 'Enfermeiros'],
+                datasets: [{
+                    data: [13, 26, 28],
+                    backgroundColor: ['#31356E', '#2D8BBA', '#6CE5E8']
+                }]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false, // Permite controlar o aspect ratio manualmente
+                aspectRatio: 0.8, // Proporção (largura / altura) do gráfico
+                width: 400, // Largura do gráfico
+                height: 400, // Altura do gráfico
+            }
+        });
+
+
+        function atualizarGraficoPizza() {
+            var medicos = document.getElementById('medicos').value;
+            var tecnicos = document.getElementById('tecnicos').value;
+            var enfermeiros = document.getElementById('enfermeiros').value;
+            graficoPizza.data.datasets[0].data = [medicos, tecnicos, enfermeiros];
+            graficoPizza.update();
+        }
+
+// Gráfico de Barras
+var ctxBarras = document.getElementById('graficoBarras').getContext('2d');
+var graficoBarras = new Chart(ctxBarras, {
+    type: 'bar',
+    data: {
+        labels: ['Computadores', 'Equipamentos médicos', 'Ferramentas', 'Uniformes', 'Remédios'],
+        datasets: [{
+            label: 'Orçamento',
+            data: [6.500, 10.580, 3.800, 1.200, 5.500],
+            backgroundColor: ['#6CE5E8', '#41B8D5', '#2D8BBA', '#2F5F98', '#31356E'], // Cores personalizadas
+            borderColor: '#000', // Cor da borda
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+function atualizarGraficoBarras() {
+    var item1 = document.getElementById('item1').value;
+    var item2 = document.getElementById('item2').value;
+    var item3 = document.getElementById('item3').value;
+    var item4 = document.getElementById('item4').value;
+    var item5 = document.getElementById('item5').value;
+    graficoBarras.data.datasets[0].data = [item1, item2, item3, item4, item5];
+    graficoBarras.update();
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* Reset de estilos padrão */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão para o corpo do documento */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+    background-color: #ffffff; /* Define a cor de fundo do corpo do documento */
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    font-family: "Nome da Fonte", sans-serif; /* Altere "Nome da Fonte" para o nome da fonte desejada */
+    font-size: 35px; /* Tamanho da fonte */
+    color: #2B70C2; /* Cor do texto */
+    font-weight: bold; /* Peso da fonte */
+    text-align: center; /* Alinhamento do texto */
+    /* Outras propriedades de estilo conforme necessário */
+}
+/* Estilos da barra lateral */
+.sidebar {
+    width: 250px; /* Define a largura da barra lateral */
+    background-color: #ffffff; /* Define a cor de fundo da barra lateral */
+    color: #464646; /* Define a cor do texto da barra lateral */
+    position: fixed; /* Fixa a barra lateral na tela */
+    height: 100%; /* Faz a barra lateral ocupar toda a altura da tela */
+    padding-top: 20px; /* Adiciona um preenchimento superior à barra lateral */
+}
+
+.sidebar .logo {
+    text-align: center; /* Alinha o texto do logo ao centro */
+    margin-bottom: 30px; /* Adiciona uma margem inferior ao logo */
+}
+
+.sidebar nav ul {
+    list-style: none; /* Remove a estilização padrão da lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+}
+
+.sidebar nav ul li {
+    padding: 15px 20px; /* Adiciona preenchimento interno aos itens da lista */
+}
+
+.sidebar nav ul li a {
+    color: #464646; /* Define a cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    display: block; /* Exibe os links como blocos */
+}
+
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+    background-color: #4c4c4c; /* Define a cor de fundo quando o link estiver ativo ou em hover */
+}
+
+.sidebar .support {
+    position: absolute; /* Fixa o elemento na posição especificada */
+    bottom: 20px; /* Define a distância do fundo */
+    width: 100%; /* Faz o elemento ocupar toda a largura do contêiner pai */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+.sidebar .support a {
+    color: #757575; /* Define a cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+/* Estilo para links ativos ou ao passar o mouse */
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+    background-color: #ffffff; /* Cor de fundo dos links ativos ou ao passar o mouse */
+    color: #2B70C2; /* Cor do texto dos links ativos ou ao passar o mouse */
+    font-size: 1.1em; /* Aumenta o tamanho do texto dos links ativos ou ao passar o mouse */
+}
+/* Estilos do conteúdo principal */
+.main-content {
+    margin-left: 250px; /* Define a margem à esquerda para o conteúdo principal */
+    padding: 20px; /* Adiciona um preenchimento interno ao conteúdo principal */
+}
+
+/* Estilos do cabeçalho */
+header {
+    display: flex; /* Permite que os elementos filhos sejam exibidos em linha */
+    justify-content: space-between; /* Distribui o espaço entre os elementos filhos */
+    align-items: center; /* Alinha os itens verticalmente */
+    padding: 10px 0; /* Adiciona preenchimento ao cabeçalho */
+    background-color: #ffffff; /* Define a cor de fundo do cabeçalho */
+}
+
+header h1 {
+    margin: 0; /* Remove as margens do título */
+}
+
+header .user-info {
+    display: flex; /* Permite que os elementos filhos sejam exibidos em linha */
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+header .user-info img {
+    border-radius: 50%; /* Adiciona bordas arredondadas à imagem do usuário */
+    margin-right: 10px; /* Adiciona uma margem à direita da imagem do usuário */
+}
+/* Estilos do conteúdo principal */
+main {
+    padding: 20px; /* Adiciona um preenchimento interno ao conteúdo principal */
+}
+
+/* Estilos das seções */
+section {
+    margin-bottom: 20px; /* Adiciona uma margem inferior às seções */
+    background-color: #E8E8E8; /* Define a cor de fundo das seções */
+    padding: 20px; /* Adiciona um preenchimento interno às seções */
+    border-radius: 8px; /* Adiciona bordas arredondadas às seções */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra às seções */
+}
+
+section h2 {
+    margin-top: 0; /* Remove a margem superior dos títulos das seções */
+}
+
+/* Estilos da tabela */
+table {
+    width: 100%; /* Faz a tabela ocupar toda a largura disponível */
+    border-collapse: collapse; /* Remove a borda entre as células */
+    margin-bottom: 20px; /* Exemplo de aumentar a margem inferior entre as tabelas */
+}
+
+table th,
+table td {
+    padding: 10px; /* Adiciona preenchimento interno às células */
+    border: 1px  #7c7c7c; /* Adiciona uma borda às células */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+table th {
+    background-color: #ffffff;
+}
+/* Estilos para tabela1 */
+.tabela1 {
+    margin: 0px; /* Define uma margem externa de 20 pixels ao redor da tabela1 */
+    border: 1px solid #E8E8E8; /* Define uma borda de 1 pixel sólida cinza (#ccc) para a tabela1 */
+    border-radius: 8px; /* Aplica um raio de borda de 8 pixels para cantos arredondados na tabela1 */
+    padding: 20px; /* Adiciona um preenchimento interno de 20 pixels dentro da tabela1 */
+    background-color: #E8E8E8; /* Define o fundo da tabela1 como cinza claro (#f0f0f0) */
+    width: 50%; /* Define a largura da tabela1 como 50% da largura disponível */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave à tabela1 com desfoque de 10 pixels */
+    margin-bottom: 20px; /* Exemplo de aumentar a margem inferior entre tabela1 e tabela2 */
+}
+
+.tabela1 h2 {
+    font-size: 1.5rem; /* Define o tamanho da fonte do título h2 dentro da tabela1 como 1.5 rem */
+    text-align: center; /* Alinhamento centralizado do título */
+    margin-bottom: 10px; /* Adiciona uma margem inferior de 10 pixels abaixo do título h2 dentro da tabela1 */
+}
+
+.tabela1 table {
+    width: 100%; /* Faz a tabela dentro da tabela1 ocupar 100% da largura disponível */
+    border-collapse: collapse; /* Mescla as bordas das células da tabela1 */
+}
+
+.tabela1 th, .tabela1 td {
+    border: 1px solid #7c7c7c; /* Define uma borda de 1 pixel sólida cinza (#ccc) ao redor de cada célula de cabeçalho (th) e célula de dados (td) dentro da tabela1 */
+    padding: 8px; /* Adiciona 8 pixels de preenchimento interno dentro de cada célula de cabeçalho (th) e célula de dados (td) dentro da tabela1 */
+    text-align: left; /* Alinha o texto à esquerda dentro de cada célula de cabeçalho (th) e célula de dados (td) dentro da tabela1 */
+    background-color: #ffffff; /* Cor de fundo das células */
+
+}
+
+.tabela1 th {
+    background-color: #ffffff; /* Define o fundo dos cabeçalhos de coluna (th) dentro da tabela1 como azul (#007BFF) */
+    color: #333; /* Define a cor do texto dos cabeçalhos de coluna (th) dentro da tabela1 como branco */
+}
+.table1 th:hover td {
+    background-color: #7e7e7e; /* Cor de fundo das células ao passar o mouse */
+    color: #ffffff; /* Cor do texto das células ao passar o mouse */
+}
+
+/* Estilos para tabela2 */
+.tabela2 {
+    margin: 0px; /* Define uma margem externa de 20 pixels ao redor da tabela2 */
+    border: 1px solid #E8E8E8; /* Define uma borda de 1 pixel sólida cinza (#ccc) para a tabela2 */
+    border-radius: 8px; /* Aplica um raio de borda de 8 pixels para cantos arredondados na tabela2 */
+    padding: 20px; /* Adiciona um preenchimento interno de 20 pixels dentro da tabela2 */
+    background-color: #E8E8E8; /* Define o fundo da tabela2 como cinza claro (#f0f0f0) */
+    width: 50%; /* Define a largura da tabela2 como 50% da largura disponível */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave à tabela2 com desfoque de 10 pixels */
+    margin-bottom: 20px; /* Exemplo de aumentar a margem inferior */
+}
+
+.tabela2 h2 {
+    font-size: 1.5rem; /* Define o tamanho da fonte do título h2 dentro da tabela2 como 1.5 rem */
+    text-align: center; /* Alinhamento centralizado do título */
+    margin-bottom: 10px; /* Adiciona uma margem inferior de 10 pixels abaixo do título h2 dentro da tabela2 */
+}
+
+.tabela2 table {
+    width: 100%; /* Faz a tabela dentro da tabela2 ocupar 100% da largura disponível */
+    border-collapse: collapse; /* Mescla as bordas das células da tabela2 */
+}
+
+.tabela2 th, .tabela2 td {
+    border: 1px solid #7c7c7c; /* Define uma borda de 1 pixel sólida cinza (#ccc) ao redor de cada célula de cabeçalho (th) e célula de dados (td) dentro da tabela2 */
+    padding: 8px; /* Adiciona 8 pixels de preenchimento interno dentro de cada célula de cabeçalho (th) e célula de dados (td) dentro da tabela2 */
+    text-align: left; /* Alinha o texto à esquerda dentro de cada célula de cabeçalho (th) e célula de dados (td) dentro da tabela2 */
+    background-color: #ffffff; /* Cor de fundo das células */
+
+}
+
+.tabela2 th {
+    background-color: #ffffff; /* Define o fundo dos cabeçalhos de coluna (th) dentro da tabela2 como amarelo (#FFCE56) */
+    color: #333; /* Define a cor do texto dos cabeçalhos de coluna (th) dentro da tabela2 como um cinza mais escuro (#333) */
+}
+
+.imagem-redimensionada {
+    max-width: 65px; /* Largura máxima da imagem */
+    height: auto; /* Mantém a proporção original */
+}
+/* Adiciona estilos para o link "Entrar" */
+.user-info .login-link {
+    color: #333; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-left: 10px; /* Espaçamento à esquerda */
+}
+
+.user-info .login-link:hover {
+    text-decoration: none; /* Sublinhado ao passar o mouse */
+    background-color: #ffffff; /* Cor de fundo dos links ativos ou ao passar o mouse */
+    color: #2B70C2; /* Cor do texto dos links ativos ou ao passar o mouse */
+    font-size: 1.1em; /* Aumenta o tamanho do texto dos links ativos ou ao passar o mouse */
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #2B70C2;
+    color: #ffff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto; /* Esta linha garante que o rodapé fique no final da página */
+}
